@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class UserSingInSerializer(serializers.Serializer):
-    username = serializers.CharField(label=_("Username"))
+    email = serializers.CharField(label=_("Email"))
     password = serializers.CharField(label=_("Password"),
                                      style={'input_type':'password'},
                                      trim_whitespace=False)
@@ -16,4 +16,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id','username','email')
+        fields = ('id','email')

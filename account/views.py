@@ -17,7 +17,7 @@ def login(request):
     if not signin_serializer.is_valid():
         return Response(signin_serializer.errors,status=HTTP_400_BAD_REQUEST)
 
-    user = authenticate(username=signin_serializer.validated_data['username'],
+    user = authenticate(email=signin_serializer.validated_data['email'].lower(),
                         password=signin_serializer.validated_data['password'])
 
     if not user:
