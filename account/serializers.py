@@ -12,6 +12,22 @@ class UserSingInSerializer(serializers.Serializer):
                                      trim_whitespace=False)
 
 
+class UserSignupSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('email', 'password')
+        extra_kwargs = {'password': {'write_only': True}}
+
+    def create(self,validated_data):
+        user = User.objects.create(
+            email=validated_data['email'].lower(),
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+    
+
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
