@@ -1,15 +1,15 @@
-from django.db.models import CharField
+from django.db import models
 from .validators import domain_name_validator
 import re
 
 
-class DomainField(CharField):
+class DomainNameField(models.CharField):
     description = 'Domain name field'
     default_validators = [domain_name_validator]
 
     def __init__(self,*args,**kwargs):
-        kwargs['max_length'] = 72
-        super(DomainField,self).__init__(*args,**kwargs)
+        kwargs['max_length'] = kwargs.get('max_length', 72)
+        super(DomainNameField, self).__init__(*args, **kwargs)
 
     def clean(self, value, model_instance):
         def check(val):

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.core.exceptions import ValidationError
-from .fields import DomainField
+from .fields import DomainNameField
 
 
 User = get_user_model()
@@ -20,7 +20,7 @@ class Comment(BaseModel):
 
     APROVED = True # @TODO : get this flag from settings file
     body = models.TextField(blank=False,default='')
-    domain = DomainField(blank=True,null=True)
+    domain = DomainNameField(blank=True,null=True)
     path = models.CharField(max_length=1500,blank=True,null=False)
     score = models.IntegerField(default=0)
     approved = models.BooleanField(default=APROVED)
