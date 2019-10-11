@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Site,Configuration,Moderation
 
-# Register your models here.
+admin.site.register(
+    [Site,Configuration,Moderation]
+)
