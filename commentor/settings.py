@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -114,6 +115,7 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': (
     #     'rest_framework.permissions.IsAuthenticated',
     # ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 TOKEN_EXPIRED_AFTER_SECONDS = 60 * 60 * 24 * 3
 
