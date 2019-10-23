@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from rest_framework_swagger.views import get_swagger_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('doc/',get_swagger_view('Commentor API')),
     path('account/',include('account.urls',namespace='account')),
     path('commenting/',include('commenting.urls',namespace='commenting')),
+    path('manage/',include('management.urls',namespace='management')),
 ]
