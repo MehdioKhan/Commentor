@@ -19,7 +19,7 @@ class Page(models.Model):
 
 class Comment(models.Model):
     body = models.TextField(blank=False,default='',verbose_name=_('Comment body'))
-    page = models.OneToOneField(to='Page',null=True,on_delete=models.SET_NULL,related_name='comments')
+    page = models.ForeignKey(to='Page',null=True,on_delete=models.CASCADE,related_name='comments')
     score = models.IntegerField(default=0)
     approved = models.BooleanField(default=False)
     commenter = models.ForeignKey(to=User,blank=True,null=True,on_delete=models.SET_NULL
