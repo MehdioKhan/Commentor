@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('doc/',get_swagger_view('Commentor API')),
     path('account/',include('account.urls',namespace='account')),
-    # path('commenting/',include('commenting.urls',namespace='commenting')),
+    path('commenting/',include('commenting.urls',namespace='commenting')),
     path('manage/',include('management.urls',namespace='management')),
 ]
