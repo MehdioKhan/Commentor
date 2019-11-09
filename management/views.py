@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import SiteSerializer,ConfigurationSerializer,ModerationSerializer
-from .models import Site,Configuration,Moderation
+from .models import Site,Configuration,ModerationSetting
 
 
 class SiteView(viewsets.ModelViewSet):
@@ -14,5 +14,5 @@ class ConfigurationView(viewsets.ModelViewSet):
 
 
 class ModerationView(viewsets.ModelViewSet):
-    queryset = Moderation.objects.all()
+    queryset = ModerationSetting.objects.all()
     serializer_class = ModerationSerializer

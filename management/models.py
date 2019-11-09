@@ -25,7 +25,7 @@ class Configuration(models.Model):
         return "{}'s configuration".format(self.site)
 
 
-class Moderation(models.Model):
+class ModerationSetting(models.Model):
     moderate_all = models.BooleanField(default=False,
                                        verbose_name=_('Require all comments to be '
                                                       'approved manually'))

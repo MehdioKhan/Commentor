@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Site,Configuration,Moderation
+from .models import Site,Configuration,ModerationSetting
 
 admin.site.register(
-    [Site,Configuration,Moderation]
+    [Site,Configuration,ModerationSetting]
 )

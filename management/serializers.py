@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Site,Configuration,Moderation
+from .models import Site,Configuration,ModerationSetting
 
 
 class SiteSerializer(serializers.ModelSerializer):
@@ -19,5 +19,5 @@ class ConfigurationSerializer(serializers.ModelSerializer):
 class ModerationSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Moderation
+        model = ModerationSetting
         fields = '__all__'
